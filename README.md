@@ -24,8 +24,7 @@ Data are found in
 ```bash 
 Mio/input_data
 ```
- folder, where are partially hidden.
- They contain info on the problem setting: graph, nodes, arches; and info on objects and trays.
+ folder. There are mainly pkl files containing info on the problem setting: graph, nodes, arches; and info on objects and trays.
 
 #### Files
 Data are uploaded in all files where needed.
