@@ -1,6 +1,6 @@
 # DYNAMIC OPTIMIZATION OF INTRALOGISTIC ROBOT SCHEDULING
 ## Master's Degree in Mathematical Engineering | Statistics and Optimization 
-## Master's thesis in collaboration with Spindox-αHead on DARKO project.
+## Master's thesis in collaboration with Spindox-αHead on DARKO project
 #### Politecnico di Torino
 Battistotti's resolution code for a single-robot scheduling problem through Approximate Dynamic Programming (ADP) techniques.
 
