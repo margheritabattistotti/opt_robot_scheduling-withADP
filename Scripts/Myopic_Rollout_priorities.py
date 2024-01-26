@@ -5,21 +5,12 @@ import random
 import timeit
 import time
 
-# 23/12/2023 -> NON STA FUNZIONANDO:
-# 1) riempie i vassoi in maniera casuale
-# 2) si muove a casissimo (ma alzando i rewards si risolve forse)
-
-# 29/12/2023 -> FUNZIONA ma:
-# 1) pare peggio degli altri
-# 2) se i tempi di consegna sono ben distanziati capisce meglio la priorità vedi medium instance - orders IV
-# 3) large instance - in generale mantiene abbastanza le priorità ma non sempre, però non rispetta quasi mai
-# i tempi di consegna
-
-# TUTTO SOMMATO: C'è prospettiva di miglioramento, ma al momento non c'è tempo.
-# Ci accontentiamo della strada giusta senza arrivare a destinazione? SVILUPPI FUTURI della tesi
-# PRO: è pur sempre più veloce del sequential filling con DP.
-
-# IN ASSOLUTO VINCE SEQUENTIAL TRAY FILLING HEURISTIC! VELOCE E PRECISO ANCHE PER ISTANZE MOLTO GRANDI (1 sec)
+# CONSIDERATIONS
+# 1) it works worse than other methods
+# 2) if delivery times are far apart it better captures the priorities - see orders IV
+# 3) there is a large improvement margin
+# PRO: it is faster than the sequential filling with DP
+# BUT the best approximate method when priorities play a role is the Sequential Tray Filling Heuristic (stoch)
 
 # ############################################# INPUT DATA EXTRACTION ############################################# #
 
