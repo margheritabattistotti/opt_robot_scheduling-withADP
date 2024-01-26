@@ -22,15 +22,14 @@ Pycharm
 #### Data
 Data are found in 
 ```bash 
-Mio/input_data
+Scripts/input_data
 ```
  folder. There are mainly pkl files containing info on the problem setting: graph, nodes, arches; and info on objects and trays.
 
 #### Files
 Data are uploaded in all files where needed.
-Files with "main" in their title are the main files, separated per method used. 
+Main files contain "main" in their name. 
 If to divide in sections, methods' names characterize each file and can be used as grouping rule.
 
 ## Experiments
 To run experiments execute main files, named after the methods to retain information on their content.
-
