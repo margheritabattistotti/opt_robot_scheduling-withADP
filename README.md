@@ -16,9 +16,6 @@ A completely connected graph is used to model the setting; its nodes are either 
 The Dynamic Programming (DP) paradigm and its approximate versions are chosen as resolution methods. In particular, exact DP, Approximate Policy Iteration (API), Myopic Rollout (MR) and Monte-Carlo Tree Search (MCTS) are implemented.
 
 ## Set up
-#### Environment
-Pycharm
-
 #### Data
 Data are found in 
 ```bash 
