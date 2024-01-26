@@ -146,7 +146,6 @@ class MCTSPreDecisionNode:
 
     # ########################################### BACKPROPAGATION PHASE ############################################ #
 
-    # MY WAY - THE CHOSEN
     def Backup(self):
         self.number_of_visits += 1
         if self.parent:
@@ -180,46 +179,6 @@ class MCTSPreDecisionNode:
                                        (delta - self.parent.parent.Value) / (self.parent.parent.number_of_visits + 1)
 
             self.parent.parent.Backup()
-
-    # # MY WAY 2 - UPDATE TROPPO SCIOCCO
-    # def Backup(self, Value):
-    #     self.number_of_visits += 1   # s_tt', s_t_t'-1
-    #     if self.parent:
-    #         self.parent.number_of_visits += 1
-    #         self.parent.Value = (1 - self.alpha) * self.parent.Value + self.alpha * Value
-    #         self.parent.parent.Value = (1 - self.alpha) * self.parent.parent.Value \
-    #                                 + self.alpha * (MR.rewards[self.parent.parent_action_type] *
-    #                                 (MR.Thorizon * 2 - self.parent.parent.state[0]) / MR.Thorizon + self.parent.Value)
-    #         self.parent.parent.Backup(self.parent.parent.Value)
-
-    # FIND HELP ALSO HERE: https://gibberblot.github.io/rl-notes/single-agent/mcts.html
-    # AND HERE: https://ai-boson.github.io/mcts/
-    # https://medium.com/@_michelangelo_/monte-carlo-tree-search-mcts-algorithm-for-dummies-74b2bae53bfa
-    # QUI IL PROBLEMA STA NEI VALORI... PERCHE LI ASSEGNO GIA PRIMA? LI STO ASSEGNANDO BENE?
-    # PERCHE PASSO VALUE IN BACKUP SE POI NON LO USO?
-
-    # # POWELL WAY - PROPRIO NON VA
-    # def Backup(self):
-    #     # FATTO COME PROPOSTO SU POWELL NON FUNZIONA: SECONDO ME LUI SBAGLIA QUALCHE INDICE DAI
-    #     self.number_of_visits += 1   # s_tt', s_t_t'-1
-    #     if self.parent.parent.parent:
-    #         # self.parent.number_of_visits += 1  # QUESTO POTREI AGGIUNGERLO NELL'EXPANSION?!
-    #         self.parent.parent.parent.number_of_visits += 1
-    #         E = 0
-    #         for c in range(len(self.parent.children)):
-    #             if self.parent.children[c].parent_outcome == 0:
-    #                 E += self.parent.outcomes_probs()[0] * self.parent.children[c].Value
-    #             elif self.parent.children[c].parent_outcome == 1:
-    #                 E += self.parent.outcomes_probs()[1] * self.parent.children[c].Value
-    #         self.parent.parent.parent.Value = 1 / sum(list(self.parent.outcomes_probs().values())) * E
-    #         delta = self.parent.Value + MR.rewards[self.parent.parent_action_type] \
-    #                 * (MR.Thorizon * 2 - self.parent.parent.state[0]) / MR.Thorizon
-    #         self.parent.parent.Value = self.parent.parent.Value + \
-    #                                    (delta - self.parent.parent.Value) / self.parent.parent.number_of_visits
-    #         self.parent.parent.Backup()  # s_t_t'-1
-    #     elif self.parent:
-    #         self.parent.number_of_visits += 1
-    #         self.parent.parent.number_of_visits += 1
 
     # ########################################### ACTION SELECTION RULES ############################################ #
 
