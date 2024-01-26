@@ -533,52 +533,6 @@ def terminal_value(s):
     return V
 
 
-# NOT THE BRIGHTEST IDEA
-# ################# A state is terminal if one tray is full. In fact, must change tray -> new system ################ #
-
-# def is_terminal(s):
-#     # Checks if the current state s is a terminal state
-#     terminal = False
-#     if len(orders) == 0:
-#         if s[0] >= Thorizon or \
-#                 tot_objects_placed(s) == tot_obj4mission or \
-#                 len(all_admissible_actions(s)) == 0:
-#             terminal = True
-#     else:
-#         full_tray = 0
-#         for t in range(T):
-#             if trays_level(s)[t] == obj4trays_dict[trays[t]]:
-#                 full_tray += 1
-#         if s[0] >= Thorizon or \
-#                 full_tray != 0 or \
-#                 len(all_admissible_actions(s)) == 0:
-#             terminal = True
-#
-#     return terminal
-#
-#
-# # Terminal value function V
-# def terminal_value(s):
-#     # Value function for a terminal state s
-#     if len(orders) == 0:
-#         V = 0.5 * (Thorizon - s[0])
-#         placed = tot_objects_placed(s)
-#         for j in range(O):
-#             V -= tot_obj4mission[j] - placed[j]
-#             V += s[2 + (T + 1) * j]
-#         return V
-#
-#     else:
-#         V = 0
-#         for t in range(T):
-#             if trays_level(s)[t] == obj4trays_dict[trays[t]]:
-#                 V = 10 * (trays_delivery_times[t] - s[0]) / trays_delivery_times[t]
-#             else:
-#                 for j in range(O):
-#                     V += s[2 + (T + 1) * j + t]
-#         return V
-
-
 # ################################################## FORWARD PASS ################################################## #
 
 def forward_pass(initial_s):
