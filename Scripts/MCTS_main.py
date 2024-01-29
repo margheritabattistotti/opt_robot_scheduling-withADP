@@ -21,19 +21,7 @@ def throwing_success(c0, c1):
     return p
 
 
-# ################################################# MAIN EXECUTION ################################################# #
-
-exec_time = []
-objective_values = []
-
-for iters in range(15):
-
-    start = timeit.default_timer()
-    time.sleep(1)
-
-    initial_state = [0] * (MR.O * (MR.T + 1) + 2)
-    initial_state[1] = 'np0'
-
+# ################################################# FORWARD PASS ################################################# #
 
     def forward_pass(initial_s):
         # Defines the optimal strategy to complete the mission following a MonteCarlo Tree Search starting
@@ -75,6 +63,19 @@ for iters in range(15):
 
         return action_sequence, state_sequence, objective
 
+
+# ################################################# MAIN EXECUTION ################################################# #
+
+exec_time = []
+objective_values = []
+
+for iters in range(15):
+
+    start = timeit.default_timer()
+    time.sleep(1)
+
+    initial_state = [0] * (MR.O * (MR.T + 1) + 2)
+    initial_state[1] = 'np0'
 
     actions_seq, states_seq, objective_value = forward_pass(initial_state)
 
