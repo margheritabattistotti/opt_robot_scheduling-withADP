@@ -25,7 +25,7 @@ Scripts/input_data
 
 #### Files
 Data are uploaded in all files where needed.
-Main files contain "main" in their name. 
+Main files contain "main" in their name (except for sequential_tray_filling files). 
 If to divide in sections, methods' names characterize each file and can be used as grouping rule.
 
 ## Experiments
